@@ -29,20 +29,11 @@
         .is-admin .admin-panel { display: block !important; }
         .is-admin .login-btn { display: none !important; } 
         
-        /* DESAIN CUSTOM SLIDER DENGAN PANAH & AUTOPLAY */
         .slider-container-wrapper { position: relative; width: 100%; display: flex; align-items: center; padding: 0 15px; }
-        .custom-slider { 
-            display: flex; overflow-x: auto; scroll-behavior: smooth; gap: 1.5rem; padding: 1rem 0; width: 100%;
-            scrollbar-width: none; -ms-overflow-style: none; /* Sembunyikan scrollbar Firefox & IE */
-        }
-        .custom-slider::-webkit-scrollbar { display: none; } /* Sembunyikan scrollbar Chrome/Safari */
+        .custom-slider { display: flex; overflow-x: auto; scroll-behavior: smooth; gap: 1.5rem; padding: 1rem 0; width: 100%; scrollbar-width: none; -ms-overflow-style: none; }
+        .custom-slider::-webkit-scrollbar { display: none; } 
         
-        .slider-btn { 
-            position: absolute; top: 50%; transform: translateY(-50%); width: 45px; height: 45px; 
-            background: rgba(255, 255, 255, 0.7); color: #002244; border: none; border-radius: 50%; 
-            display: flex; align-items: center; justify-content: center; cursor: pointer; 
-            z-index: 10; box-shadow: 0 4px 15px rgba(0,0,0,0.15); transition: all 0.3s ease; backdrop-filter: blur(5px);
-        }
+        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 45px; height: 45px; background: rgba(255, 255, 255, 0.7); color: #002244; border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 4px 15px rgba(0,0,0,0.15); transition: all 0.3s ease; backdrop-filter: blur(5px); }
         .slider-btn:hover { background: #0d6efd; color: white; }
         .slider-btn.prev { left: -10px; }
         .slider-btn.next { right: -10px; }
@@ -59,39 +50,34 @@
         .app-icon-wrapper { transition: all 0.3s; }
         .app-icon-wrapper:hover { transform: scale(1.1); }
 
-        /* DESAIN GLASSMORPHISM UNTUK TABEL BOS */
-        .glass-card { 
-            background: rgba(255, 255, 255, 0.15) !important; 
-            backdrop-filter: blur(12px) !important; 
-            -webkit-backdrop-filter: blur(12px) !important; 
-            border: 1px solid rgba(255, 255, 255, 0.3) !important; 
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25) !important; 
-        }
+        .glass-card { background: rgba(255, 255, 255, 0.15) !important; backdrop-filter: blur(12px) !important; -webkit-backdrop-filter: blur(12px) !important; border: 1px solid rgba(255, 255, 255, 0.3) !important; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25) !important; }
         .glass-table { color: #ffffff !important; border-color: rgba(255,255,255,0.2) !important; }
-        .glass-table thead th { 
-            background: rgba(255, 255, 255, 0.2) !important; 
-            color: #ffffff !important; 
-            border-bottom: 2px solid rgba(255,255,255,0.4) !important; 
-            text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;
-        }
-        .glass-table tbody td { 
-            background: transparent !important; 
-            color: #ffffff !important; 
-            border-bottom: 1px solid rgba(255,255,255,0.15) !important; 
-        }
+        .glass-table thead th { background: rgba(255, 255, 255, 0.2) !important; color: #ffffff !important; border-bottom: 2px solid rgba(255,255,255,0.4) !important; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; }
+        .glass-table tbody td { background: transparent !important; color: #ffffff !important; border-bottom: 1px solid rgba(255,255,255,0.15) !important; }
         .glass-table tbody tr:hover td { background: rgba(255,255,255,0.1) !important; }
-        .glass-table tfoot th { 
-            background: rgba(0, 0, 0, 0.4) !important; 
-            color: #ffc107 !important; 
-            border-top: 2px solid rgba(255,255,255,0.4) !important; 
-        }
+        .glass-table tfoot th { background: rgba(0, 0, 0, 0.4) !important; color: #ffc107 !important; border-top: 2px solid rgba(255,255,255,0.4) !important; }
 
         .profile-card { border: none; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 1rem; position: relative; }
-        .profile-card img { width: 100%; height: auto; object-fit: cover; }
-        .btn-edit-ks { position: absolute; top: 10px; right: 10px; z-index: 10; }
+        .profile-card iframe { border: none; width: 100%; height: 100%; }
+        
+        .visi-misi-content { max-height: 290px; overflow: hidden; position: relative; transition: max-height 0.6s ease; }
+        .visi-misi-content.expanded { max-height: 3000px; }
+        .visi-misi-fade { position: absolute; bottom: 0; left: 0; right: 0; height: 60px; background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1)); pointer-events: none; transition: opacity 0.4s; }
+        .visi-misi-fade.hidden { opacity: 0; }
 
-        #loginGembok { cursor: pointer; color: #6c757d; transition: color 0.3s; padding: 5px;}
-        #loginGembok:hover { color: #0d6efd;}
+        #loginGembok { cursor: pointer; transition: color 0.3s; padding: 5px;}
+        #loginGembok:hover { color: #0d6efd !important;}
+
+        .wa-float { 
+            position: fixed; width: 60px; height: 60px; bottom: 80px; right: 20px; 
+            background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; 
+            font-size: 30px; box-shadow: 0px 4px 10px rgba(0,0,0,0.15); z-index: 1000; 
+            display: flex; align-items: center; justify-content: center; text-decoration: none; 
+            animation: pulse-wa 2s infinite;
+        }
+        .wa-float:hover { background-color: #128c7e; color: #FFF; transform: scale(1.1); }
+        @keyframes pulse-wa { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+        @media (min-width: 768px) { .wa-float { bottom: 30px; right: 30px; } }
 
         .stat-card { color: white; border-radius: 0.8rem; padding: 1.2rem 0.5rem; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s; }
         .stat-card:hover { transform: translateY(-5px); }
@@ -106,17 +92,25 @@
         .icon-option { width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border: 2px solid #dee2e6; border-radius: 10px; cursor: pointer; transition: all 0.2s; font-size: 1.4rem; color: #6c757d; background-color: white; }
         .icon-option:hover { border-color: #0d6efd; color: #0d6efd; background-color: #f8f9fa; }
         .icon-option.selected { border-color: #0d6efd; background-color: #0d6efd; color: white; transform: scale(1.1); box-shadow: 0 4px 10px rgba(13, 110, 253, 0.3); }
+
+        .footer-link { color: #adb5bd; text-decoration: none; transition: color 0.3s; }
+        .footer-link:hover { color: #ffffff; }
+        .footer-icon-btn { width: 40px; height: 40px; background-color: #495057; border: none; color: white; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background-color 0.3s; text-decoration: none;}
+        .footer-icon-btn:hover { background-color: #0d6efd; color: white; }
     </style>
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top d-none d-md-flex">
         <div class="container">
-            <a class="navbar-brand fw-bold text-primary" href="#"><i class="fas fa-graduation-cap me-2"></i>SDN 13 DAMPELAS</a>
+            <a class="navbar-brand fw-bold text-primary d-flex align-items-center" href="#">
+                <img id="navLogo" src="" alt="Logo" style="width: 30px; height: 30px; object-fit: contain;" class="me-2 d-none">
+                <i id="navIcon" class="fas fa-graduation-cap me-2"></i>SDN 13 DAMPELAS
+            </a>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="#beranda">Beranda</a></li>
                 <li class="nav-item"><a class="nav-link" href="#berita">Berita</a></li>
-                <li class="nav-item"><a class="nav-link" href="#profil">Profil & Data</a></li>
+                <li class="nav-item"><a class="nav-link" href="#profil">Profil & Visi Misi</a></li>
                 <li class="nav-item"><a class="nav-link" href="#danabos">Dana BOS</a></li>
                 <li class="nav-item"><a class="nav-link" href="#aplikasi">Layanan</a></li>
                 <li class="nav-item"><a class="nav-link text-warning fw-bold" href="#" id="navSpmbLink" target="_blank">SPMB</a></li>
@@ -130,11 +124,11 @@
         <div id="heroSlider" class="hero-slider"></div>
         <div class="container hero-content">
             <h1 class="display-4 fw-bold" id="heroJudul">SDN 13 DAMPELAS</h1>
-            <p class="lead mt-3 mb-4" id="heroSubjudul">Mewujudkan Sekolah Dasar Berstandar Modern, Berakhlak Mulia, dan Unggul.</p>
+            <p class="lead mt-3 mb-4" id="heroSubjudul">DINAS PENDIDIKAN PEMUDA DAN OLAHRAGA KAB. DONGGALA</p>
             <a href="#" class="btn btn-warning btn-lg fw-bold rounded-pill px-4 shadow mb-3" id="heroTombol" target="_blank">Pendaftaran Siswa Baru</a>
             <div class="admin-panel mt-3">
-                <label class="btn btn-light btn-sm text-dark shadow"><i class="fas fa-camera me-1"></i>Ganti Gambar Background Hero
-                    <input type="file" accept="image/*" class="d-none" onchange="handleBgUpload(this)">
+                <label class="btn btn-light btn-sm text-dark shadow"><i class="fas fa-camera me-1"></i>Tambah Gambar Background Hero
+                    <input type="file" accept="image/*" class="d-none" multiple onchange="handleBgUpload(this)">
                 </label>
                 <div id="bgLoading" class="text-warning mt-2 d-none spinner-border spinner-border-sm"></div>
             </div>
@@ -156,25 +150,28 @@
 
     <section id="profil" class="pt-5 bg-white">
         <div class="container">
-            <h2 class="section-title">Profil & Sambutan Kepala Sekolah</h2>
-            <div class="row align-items-center mb-5">
-                <div class="col-lg-5 mb-4 mb-lg-0">
-                    <div class="card profile-card">
-                        <div class="admin-panel btn-edit-ks">
-                            <label class="btn btn-warning btn-sm shadow"><i class="fas fa-camera me-1"></i>Ganti Foto KS
-                                <input type="file" accept="image/*" class="d-none" onchange="handleKsUploadDirect(this)">
-                            </label>
-                            <div id="ksLoadingDirect" class="spinner-border spinner-border-sm text-warning d-none ms-2"></div>
+            <div class="row align-items-start mb-5">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="card profile-card bg-dark position-relative">
+                        <div class="ratio ratio-16x9 position-relative" id="videoWrapper">
+                            <iframe id="ksVideo" src="" title="Video Profil" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                        <img src="https://source.unsplash.com/600x600/?portrait,teacher" id="ksFoto" class="card-img-top" alt="Kepala Sekolah">
-                        <div class="card-body text-center bg-primary text-white">
-                            <h5 class="card-title fw-bold mb-0" id="ksNama">Memuat Nama...</h5>
+                        <div class="card-body text-center bg-primary text-white py-2">
+                            <h6 class="card-title fw-bold mb-0" id="ksNama">Memuat Nama...</h6>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-7">
-                    <h4 class="fw-bold text-primary mb-3">Sambutan Kepala Sekolah</h4>
-                    <p class="text-muted text-justify lead" style="line-height: 1.8;" id="ksSambutan">Memuat teks sambutan...</p>
+                <div class="col-lg-6 d-flex flex-column justify-content-start">
+                    <h4 class="fw-bold text-primary mb-3 mt-0" style="padding-top:0;">Visi dan Misi Sekolah</h4>
+                    <div class="position-relative">
+                        <div id="ksSambutanWrapper" class="visi-misi-content">
+                            <p class="text-muted text-justify lead mb-0" style="line-height: 1.8; font-size: 1.05rem;" id="ksSambutan">Memuat teks visi dan misi...</p>
+                        </div>
+                        <div class="visi-misi-fade" id="visiMisiFade"></div>
+                    </div>
+                    <div>
+                        <button class="btn btn-link text-decoration-none p-0 mt-2 fw-bold text-primary" id="btnSelengkapnya" onclick="toggleVisiMisi()" style="display: none;">Selengkapnya <i class="fas fa-chevron-down ms-1"></i></button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -260,32 +257,64 @@
         </div>
     </section>
 
-    <footer class="bg-dark text-white pt-5 pb-3">
+    <a href="https://wa.me/6281234567890" id="waFloatBtn" class="wa-float" target="_blank" title="Chat WhatsApp Admin">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer style="background-color: #212529; color: #adb5bd;" class="pt-5 pb-4">
         <div class="container">
-            <div class="row gy-4">
-                <div class="col-md-4">
-                    <h5 class="fw-bold text-uppercase mb-3"><i class="fas fa-graduation-cap me-2 text-primary"></i>SDN 13 DAMPELAS</h5>
-                    <p class="text-muted small lh-lg">Berdedikasi untuk mencetak generasi cerdas, berakhlak mulia, dan kompetitif. Kami terus berinovasi mengintegrasikan teknologi ke dalam dunia pendidikan dasar.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5 class="fw-bold mb-3">Info Kontak</h5>
-                    <ul class="list-unstyled text-muted small lh-lg"><li class="mb-2 d-flex"><i class="fas fa-map-marker-alt mt-1 me-3 text-primary"></i> <span id="footerAlamat">Memuat alamat...</span></li></ul>
-                </div>
-                <div class="col-md-4">
-                    <h5 class="fw-bold mb-3">Media Sosial Kami</h5>
+            <div class="row gy-4 mb-4">
+                <div class="col-lg-5 col-md-12 pe-lg-5">
+                    <div class="d-flex align-items-center mb-4">
+                        <img id="footerLogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Lambang_Kabupaten_Donggala.png/400px-Lambang_Kabupaten_Donggala.png" alt="Logo" class="rounded bg-white p-1 me-3" style="width: 55px; height: 55px; object-fit: contain;">
+                        <div>
+                            <h4 class="fw-bold text-white mb-0" style="letter-spacing: 0.5px;">SDN 13 DAMPELAS</h4>
+                            <small class="fw-bold" style="color: #868e96;">KABUPATEN DONGGALA</small>
+                        </div>
+                    </div>
+                    <p class="small lh-lg mb-4 text-justify">Organisasi Perangkat Daerah yang menyelenggarakan urusan pemerintahan bidang Pendidikan, bidang Kepemudaan, dan bidang Olahraga di Kabupaten Donggala, Provinsi Sulawesi Tengah.</p>
                     <div class="d-flex gap-2">
-                        <a href="#" target="_blank" id="ytLink" class="btn btn-outline-light btn-sm rounded-circle d-none"><i class="fab fa-youtube"></i></a>
-                        <a href="#" target="_blank" id="tiktokLink" class="btn btn-outline-light btn-sm rounded-circle d-none"><i class="fab fa-tiktok"></i></a>
-                        <a href="#" target="_blank" id="instaLink" class="btn btn-outline-light btn-sm rounded-circle d-none"><i class="fab fa-instagram"></i></a>
-                        <a href="#" target="_blank" id="fbLink" class="btn btn-outline-light btn-sm rounded-circle d-none"><i class="fab fa-facebook"></i></a>
-                        <a href="#" target="_blank" id="xLink" class="btn btn-outline-light btn-sm rounded-circle d-none"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" id="fbLink" class="footer-icon-btn"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" id="instaLink" class="footer-icon-btn"><i class="fab fa-instagram"></i></a>
+                        <a href="#" id="ytLink" class="footer-icon-btn"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white fw-bold mb-4 pb-2" style="border-bottom: 1px solid #495057; display: inline-block;">Tautan Terkait</h5>
+                    <ul class="list-unstyled mt-2 small">
+                        <li class="mb-3"><a href="https://www.kemdikbud.go.id/" target="_blank" class="footer-link"><i class="fas fa-chevron-right me-2 text-secondary"></i>Kemendikdasmen RI</a></li>
+                        <li class="mb-3"><a href="https://www.kemenpora.go.id/" target="_blank" class="footer-link"><i class="fas fa-chevron-right me-2 text-secondary"></i>Kemenpora RI</a></li>
+                        <li class="mb-3"><a href="https://donggalakab.go.id/" target="_blank" class="footer-link"><i class="fas fa-chevron-right me-2 text-secondary"></i>Pemerintah Kab. Donggala</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="text-white fw-bold mb-4 pb-2" style="border-bottom: 1px solid #495057; display: inline-block;">Hubungi Kami</h5>
+                    <ul class="list-unstyled mt-2 small">
+                        <li class="mb-3 d-flex align-items-start">
+                            <i class="fas fa-map-marker-alt me-3 mt-1 text-primary" style="font-size: 1.1rem;"></i>
+                            <span id="footerAlamat">Jl. Pusat Pemerintahan, Gunung Bale, Banawa, Kab. Donggala.</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-phone-alt me-3 text-primary" style="font-size: 1.1rem;"></i>
+                            <span>(0451) 123456</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fab fa-whatsapp me-3 text-success" style="font-size: 1.2rem;"></i>
+                            <a href="#" id="footerWaLink" target="_blank" class="footer-link">Chat WhatsApp Admin</a>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="fas fa-envelope me-3 text-primary" style="font-size: 1.1rem;"></i>
+                            <span>admin@disdikpora.donggalakab.go.id</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <hr class="border-secondary my-4">
-            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
-                <small class="text-muted">&copy; 2026 SDN 13 DAMPELAS. Terintegrasi Cloud CMS.</small>
-                <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" id="loginGembok" title="Akses Admin Sekolah" class="mt-2 mt-md-0"><i class="fas fa-lock"></i></a>
+            <hr style="border-color: #495057;" class="my-4">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small" style="color: #868e96;">
+                <span class="mb-2 mb-md-0">&copy; 2026 Dinas Pendidikan, Pemuda, dan Olahraga Kabupaten Donggala.</span>
+                <span>Hak Cipta Dilindungi Undang-Undang. <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" id="loginGembok" class="text-secondary text-decoration-none ms-2">@</a></span>
             </div>
         </div>
     </footer>
@@ -354,7 +383,7 @@
                 <div class="modal-body p-0">
                     <ul class="nav nav-pills bg-light nav-fill rounded-0" id="cmsTab" role="tablist">
                         <li class="nav-item"><button class="nav-link active rounded-0" data-bs-toggle="pill" data-bs-target="#tab-berita" type="button"><i class="fas fa-newspaper me-1"></i>Berita</button></li>
-                        <li class="nav-item"><button class="nav-link rounded-0" data-bs-toggle="pill" data-bs-target="#tab-ks" type="button"><i class="fas fa-user me-1"></i>Profil KS</button></li>
+                        <li class="nav-item"><button class="nav-link rounded-0" data-bs-toggle="pill" data-bs-target="#tab-ks" type="button"><i class="fas fa-user me-1"></i>Profil & Visi Misi</button></li>
                         <li class="nav-item"><button class="nav-link rounded-0" data-bs-toggle="pill" data-bs-target="#tab-stat" type="button"><i class="fas fa-chart-bar me-1"></i>Statistik Dinamis</button></li>
                         <li class="nav-item"><button class="nav-link rounded-0" data-bs-toggle="pill" data-bs-target="#tab-bos" type="button"><i class="fas fa-money-bill-wave me-1"></i>BOS</button></li>
                         <li class="nav-item"><button class="nav-link rounded-0" data-bs-toggle="pill" data-bs-target="#tab-config" type="button"><i class="fas fa-cogs me-1"></i>Lainnya</button></li>
@@ -376,8 +405,9 @@
                         <div class="tab-pane fade" id="tab-ks">
                             <form id="formKSConfig">
                                 <div class="mb-3"><label class="form-label fw-semibold">Nama Kepala Sekolah</label><input type="text" class="form-control" id="ksNamaIn"></div>
-                                <div class="mb-3"><label class="form-label fw-semibold">Teks Sambutan</label><textarea class="form-control" id="ksSambutanIn" rows="4"></textarea></div>
-                                <button type="submit" class="btn btn-danger w-100 fw-bold" id="btnSubmitKSConfig">Simpan Profil KS</button>
+                                <div class="mb-3"><label class="form-label fw-semibold">URL Video Sambutan (YouTube)</label><input type="text" class="form-control" id="ksVideoIn" placeholder="Contoh: https://youtube.com/shorts/xxx123"></div>
+                                <div class="mb-3"><label class="form-label fw-semibold">Teks Visi & Misi Sekolah</label><textarea class="form-control" id="ksSambutanIn" rows="6"></textarea></div>
+                                <button type="submit" class="btn btn-danger w-100 fw-bold" id="btnSubmitKSConfig">Simpan Profil & Visi Misi</button>
                             </form>
                         </div>
                         
@@ -416,13 +446,22 @@
                         </div>
 
                         <div class="tab-pane fade" id="tab-config">
+                            <div class="mb-4 p-3 bg-white border rounded shadow-sm">
+                                <label class="form-label fw-bold text-primary mb-2">Ganti Logo Sekolah</label>
+                                <input type="file" id="logoFile" class="form-control" accept="image/*" onchange="handleLogoUpload(this)">
+                                <div id="logoLoading" class="text-primary mt-2 d-none spinner-border spinner-border-sm"></div>
+                                <small class="text-muted d-block mt-1">Logo akan langsung terganti saat file dipilih.</small>
+                            </div>
+
                             <form id="formConfig">
                                 <h6 class="text-primary fw-bold mb-3 border-bottom pb-2">Link Aplikasi Eksternal</h6>
                                 <div class="mb-3"><label class="form-label fw-semibold">Link Formulir SPMB</label><input type="text" class="form-control" id="urlSpmbIn"></div>
                                 <div class="mb-4"><label class="form-label fw-semibold">Link Buku Tamu</label><input type="text" class="form-control" id="urlBukuTamuIn"></div>
                                 
-                                <h6 class="text-primary fw-bold mb-3 border-bottom pb-2">Alamat & Media Sosial</h6>
+                                <h6 class="text-primary fw-bold mb-3 border-bottom pb-2">Alamat, WhatsApp & Medsos</h6>
                                 <div class="mb-3"><label class="form-label fw-semibold">Alamat Sekolah</label><input type="text" class="form-control" id="alamatIn"></div>
+                                <div class="mb-3"><label class="form-label fw-semibold"><i class="fab fa-whatsapp text-success me-1"></i>Nomor WhatsApp (Cth: 08123...)</label><input type="text" class="form-control" id="waIn" placeholder="Awali dengan 08 / 62 tanpa spasi/simbol"></div>
+                                
                                 <div class="row g-2 mb-3">
                                     <div class="col-6"><label class="form-label fw-semibold"><i class="fab fa-youtube text-danger me-1"></i>URL YouTube</label><input type="text" class="form-control" id="ytIn"></div>
                                     <div class="col-6"><label class="form-label fw-semibold"><i class="fab fa-tiktok text-dark me-1"></i>URL TikTok</label><input type="text" class="form-control" id="tiktokIn"></div>
@@ -430,7 +469,7 @@
                                     <div class="col-6"><label class="form-label fw-semibold"><i class="fab fa-facebook text-primary me-1"></i>URL Facebook</label><input type="text" class="form-control" id="fbIn"></div>
                                     <div class="col-6"><label class="form-label fw-semibold"><i class="fab fa-x-twitter text-dark me-1"></i>URL X (Twitter)</label><input type="text" class="form-control" id="xIn"></div>
                                 </div>
-                                <button type="submit" class="btn btn-danger w-100 fw-bold" id="btnSubmitConfig">Simpan Semua Pengaturan</button>
+                                <button type="submit" class="btn btn-danger w-100 fw-bold" id="btnSubmitConfig">Simpan Pengaturan Teks & Link</button>
                             </form>
                         </div>
 
@@ -443,7 +482,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // ==============================================================
-        const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxodKO7BkpYmoVWnn9yAp-ip7_riNjuVecFh19kaLWro0zkF0xAfeKDY74ZcdRtTpQTvw/exec";
+        // MASUKKAN URL GOOGLE APPS SCRIPT DI SINI
+        const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxCnxuU4QaxpC732FNuzhAhrTLRsMRw06sP3yeikG2rfOuZMcgRL9a32l2qn_tyGOo2/exec";
         // ==============================================================
 
         let globalBeritaData = []; 
@@ -458,11 +498,29 @@
             return fileId ? `https://drive.google.com/thumbnail?id=${fileId}&sz=w1600` : url;
         }
 
+        function getYouTubeEmbedUrl(url) {
+            if (!url) return "";
+            let videoId = "";
+            try {
+                if (url.includes("youtube.com/shorts/")) { videoId = url.split("shorts/")[1].split("?")[0]; } 
+                else if (url.includes("youtu.be/")) { videoId = url.split("youtu.be/")[1].split("?")[0]; } 
+                else if (url.includes("watch?v=")) { videoId = url.split("watch?v=")[1].split("&")[0]; } 
+                else if (url.includes("embed/")) { videoId = url.split("embed/")[1].split("?")[0]; } 
+                else {
+                    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=|shorts\/)([^#&?]*).*/;
+                    const match = url.match(regExp);
+                    if (match && match[2].length === 11) { videoId = match[2]; }
+                }
+                videoId = videoId.replace(/[^a-zA-Z0-9_-]/g, '').substring(0, 11);
+                if (videoId && videoId.length === 11) { return `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1`; }
+            } catch (e) { console.error("Gagal memproses URL", e); }
+            return "";
+        }
+
         function formatRupiah(angka) { return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(angka); }
         function formatDateID(dateString) { try { const d = new Date(dateString); if(!isNaN(d)) return d.toLocaleDateString('id-ID', {day:'numeric', month:'long', year:'numeric'}); } catch(e) {} return dateString; }
         function checkLink(link) { return link && link.trim() !== "" ? link : "javascript:alert('Link aplikasi belum diatur oleh admin!');"; }
 
-        // FUNGSI INISIALISASI AUTO-SLIDER & PANAH
         function initSlider(wrapperId, scrollStep) {
             const wrapper = document.getElementById(wrapperId);
             if (!wrapper) return;
@@ -470,44 +528,55 @@
             const btnPrev = wrapper.querySelector('.prev');
             const btnNext = wrapper.querySelector('.next');
             
-            // Logika Klik Panah
             btnNext.onclick = () => slider.scrollBy({ left: scrollStep, behavior: 'smooth' });
             btnPrev.onclick = () => slider.scrollBy({ left: -scrollStep, behavior: 'smooth' });
 
-            // Logika Autoplay (Geser otomatis setiap 3 detik)
             let autoPlay = setInterval(() => {
-                if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10) {
-                    slider.scrollTo({ left: 0, behavior: 'smooth' });
-                } else {
-                    slider.scrollBy({ left: scrollStep, behavior: 'smooth' });
-                }
+                if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10) { slider.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                else { slider.scrollBy({ left: scrollStep, behavior: 'smooth' }); }
             }, 3000);
 
-            // Berhenti otomatis saat kursor diarahkan (hover) ke area slider
             wrapper.onmouseenter = () => clearInterval(autoPlay);
             wrapper.onmouseleave = () => {
                 autoPlay = setInterval(() => {
-                    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10) {
-                        slider.scrollTo({ left: 0, behavior: 'smooth' });
-                    } else {
-                        slider.scrollBy({ left: scrollStep, behavior: 'smooth' });
-                    }
+                    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10) { slider.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { slider.scrollBy({ left: scrollStep, behavior: 'smooth' }); }
                 }, 3000);
             };
+        }
+
+        function toggleVisiMisi() {
+            const wrapper = document.getElementById('ksSambutanWrapper');
+            const btn = document.getElementById('btnSelengkapnya');
+            const fade = document.getElementById('visiMisiFade');
+            wrapper.classList.toggle('expanded');
+            if (wrapper.classList.contains('expanded')) {
+                btn.innerHTML = 'Tutup <i class="fas fa-chevron-up ms-1"></i>';
+                fade.classList.add('hidden');
+            } else {
+                btn.innerHTML = 'Selengkapnya <i class="fas fa-chevron-down ms-1"></i>';
+                fade.classList.remove('hidden');
+            }
         }
 
         function loadWebsiteData() {
             fetch(GAS_WEB_APP_URL, { method: 'POST', mode: 'cors', body: JSON.stringify({ action: "get_data" }) })
             .then(res => res.json()).then(data => {
-                const s = data.settings;
-                globalBeritaData = data.berita; 
+                const s = data.settings || {};
+                globalBeritaData = data.berita || []; 
                 
+                const logoUrl = s.Logo_Sekolah ? fixGoogleDriveLink(s.Logo_Sekolah) : 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Lambang_Kabupaten_Donggala.png/400px-Lambang_Kabupaten_Donggala.png';
+                const navLogo = document.getElementById('navLogo');
+                if (navLogo) { navLogo.src = logoUrl; navLogo.classList.remove('d-none'); document.getElementById('navIcon').classList.add('d-none'); }
+                const footerLogo = document.getElementById('footerLogo');
+                if (footerLogo) footerLogo.src = logoUrl;
+
                 const linkSpmb = checkLink(s.URL_SPMB); const linkBukuTamu = checkLink(s.URL_Buku_Tamu);
                 document.getElementById('navSpmbLink').href = linkSpmb; document.getElementById('mobileNavSpmbLink').href = linkSpmb; document.getElementById('heroTombol').href = linkSpmb;
                 document.getElementById('navBukuTamuLink').href = linkBukuTamu; document.getElementById('mobileNavBukuTamuLink').href = linkBukuTamu;
                 
                 document.getElementById('heroJudul').textContent = s.Judul_Hero || "SDN 13 DAMPELAS";
-                document.getElementById('heroSubjudul').textContent = s.Subjudul_Hero || "Mewujudkan Sekolah Dasar Berstandar Modern, Berakhlak Mulia, dan Unggul.";
+                document.getElementById('heroSubjudul').textContent = s.Subjudul_Hero || "DINAS PENDIDIKAN PEMUDA DAN OLAHRAGA KAB. DONGGALA";
                 
                 const heroSlider = document.getElementById('heroSlider');
                 if (data.heroBgs && data.heroBgs.length > 0) {
@@ -529,21 +598,54 @@
                         }, 6000); 
                     }
                 } else {
-                    const slide = document.createElement('div'); slide.className = 'hero-slide'; slide.style.backgroundImage = `url('https://source.unsplash.com/1600x900/?school,building')`; slide.style.transform = 'translateX(0)'; heroSlider.appendChild(slide);
+                    const slide = document.createElement('div'); slide.className = 'hero-slide'; slide.style.backgroundImage = `url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1600&q=80&fit=crop')`; slide.style.transform = 'translateX(0)'; heroSlider.appendChild(slide);
                 }
 
                 if (s.BG_Dana_BOS) { document.getElementById('danabos').style.backgroundImage = `url('${fixGoogleDriveLink(s.BG_Dana_BOS)}')`; }
 
                 document.getElementById('beritaContainer').innerHTML = data.berita && data.berita.length > 0 ? data.berita.map(b => {
-                    const thumbnail = b[4] ? fixGoogleDriveLink(b[4].split("||")[0]) : 'https://source.unsplash.com/600x400/?school,news';
+                    const thumbnail = b[4] ? fixGoogleDriveLink(b[4].split("||")[0]) : 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80&fit=crop';
                     return `<div class="slide-item news"><div class="card news-card shadow-sm h-100" onclick="showBeritaDetail('${b[0]}')"><img src="${thumbnail}" class="card-img-top" style="height: 200px; object-fit: cover;"><div class="card-body"><small class="text-primary fw-bold"><i class="far fa-calendar-alt me-1"></i>${formatDateID(b[1])}</small><h5 class="card-title fw-bold mt-2" style="font-size:1.1rem;">${b[2]}</h5><p class="card-text text-muted small news-content-preview">${b[3]}</p><button class="btn btn-sm btn-outline-danger admin-panel mt-2" onclick="event.stopPropagation(); hapusBerita('${b[0]}')"><i class="fas fa-trash me-1"></i>Hapus</button></div></div></div>`;
                 }).join('') : '<p class="text-muted text-center w-100 mt-2">Belum ada berita yang dipublikasikan.</p>';
                 
                 if (data.berita && data.berita.length > 1) initSlider('beritaWrapper', 340);
                 
-                if(s.Foto_Kepala_Sekolah) document.getElementById('ksFoto').setAttribute('src', fixGoogleDriveLink(s.Foto_Kepala_Sekolah));
-                document.getElementById('ksNama').textContent = s.Nama_Kepala_Sekolah || "-"; document.getElementById('ksSambutan').textContent = s.Sambutan_Kepala_Sekolah || "-";
+                const ytEmbed = getYouTubeEmbedUrl(s.URL_Video_KS);
+                const videoIframe = document.getElementById('ksVideo');
+                const videoWrapper = document.getElementById('videoWrapper');
                 
+                if (ytEmbed) {
+                    videoIframe.src = ytEmbed;
+                    videoIframe.classList.remove('d-none');
+                    const placeholder = document.getElementById('ytPlaceholder');
+                    if(placeholder) placeholder.remove();
+                } else {
+                    videoIframe.classList.add('d-none');
+                    if (!document.getElementById('ytPlaceholder')) {
+                        const placeholder = document.createElement('div');
+                        placeholder.id = 'ytPlaceholder';
+                        placeholder.className = 'd-flex flex-column align-items-center justify-content-center bg-secondary text-white w-100 h-100 position-absolute top-0 start-0';
+                        placeholder.innerHTML = '<i class="fas fa-video fa-2x mb-2 opacity-50"></i><small class="opacity-75">Video belum diatur</small>';
+                        videoWrapper.appendChild(placeholder);
+                    }
+                }
+
+                document.getElementById('ksNama').textContent = s.Nama_Kepala_Sekolah || "Nama Kepala Sekolah"; 
+                
+                const visiMisiText = s.Sambutan_Kepala_Sekolah || "Tuliskan Visi dan Misi sekolah melalui menu Pengaturan Admin (@).";
+                document.getElementById('ksSambutan').innerHTML = visiMisiText.replace(/\n/g, '<br>');
+                
+                setTimeout(() => {
+                    const wrap = document.getElementById('ksSambutanWrapper');
+                    const content = document.getElementById('ksSambutan');
+                    if(content.scrollHeight > wrap.clientHeight + 10) {
+                        document.getElementById('btnSelengkapnya').style.display = 'inline-block';
+                        document.getElementById('visiMisiFade').style.display = 'block';
+                    } else {
+                        document.getElementById('visiMisiFade').style.display = 'none';
+                    }
+                }, 500);
+
                 if (data.statistik && data.statistik.length > 0) {
                     const colors = ['stat-color-0', 'stat-color-1', 'stat-color-2', 'stat-color-3', 'stat-color-4', 'stat-color-5', 'stat-color-6', 'stat-color-7'];
                     document.getElementById('statContainer').innerHTML = data.statistik.map((st, index) => {
@@ -561,8 +663,36 @@
                 document.getElementById('footerAlamat').textContent = s.Alamat_Sekolah || "-";
                 [['ytLink', s.URL_YouTube], ['tiktokLink', s.URL_TikTok], ['instaLink', s.URL_Instagram], ['fbLink', s.URL_Facebook], ['xLink', s.URL_X]].forEach(link => { const el = document.getElementById(link[0]); if(link[1]) { el.setAttribute('href', link[1]); el.classList.remove('d-none'); } });
 
+                // ==========================================
+                // SOLUSI BUG WHATSAPP DENGAN AUTO-FORMATTER
+                // ==========================================
+                const waBtn = document.getElementById('waFloatBtn');
+                const footerWaLink = document.getElementById('footerWaLink');
+
+                if (s.No_WhatsApp && String(s.No_WhatsApp).trim() !== "") {
+                    // Hanya ambil angkanya saja
+                    let waNum = String(s.No_WhatsApp).replace(/\D/g, '');
+                    
+                    // Auto-koreksi (Jika dimulai dengan 08, ubah jadi 628)
+                    if (waNum.startsWith('08')) {
+                        waNum = '62' + waNum.substring(1);
+                    } else if (waNum.startsWith('8')) {
+                        waNum = '62' + waNum;
+                    }
+
+                    const waUrl = `https://wa.me/${waNum}`;
+                    if(waBtn) waBtn.href = waUrl;
+                    if(footerWaLink) footerWaLink.href = waUrl;
+                }
+
+                // ==========================================
+                // SOLUSI BUG APLIKASI DAN GALERI "MEMUAT..."
+                // ==========================================
+                // Menghilangkan baris kosong dengan filter() agar tidak error
+                const appsList = (data.apps || []).filter(app => app && app[1] && String(app[1]).trim() !== "");
+                
                 const appColors = ['#0d6efd', '#198754', '#dc3545', '#ffc107', '#0dcaf0', '#6f42c1', '#fd7e14', '#20c997', '#e83e8c', '#6610f2'];
-                document.getElementById('appContainer').innerHTML = data.apps.map((app, index) => {
+                document.getElementById('appContainer').innerHTML = appsList.length > 0 ? appsList.map((app, index) => {
                     const color = appColors[index % appColors.length];
                     return `
                     <div class="slide-item app">
@@ -577,15 +707,17 @@
                             <button class="btn btn-sm btn-outline-danger mb-1 p-1 px-2" onclick="hapusApp('${app[0]}')"><i class="fas fa-trash"></i></button>
                         </div>
                     </div>`;
-                }).join('') || '<p class="text-muted w-100 text-center mt-2">Belum ada link layanan.</p>';
+                }).join('') : '<p class="text-muted w-100 text-center mt-2">Belum ada link layanan.</p>';
 
-                if (data.apps && data.apps.length > 3) initSlider('appWrapper', 150);
+                if (appsList.length > 3) initSlider('appWrapper', 150);
 
-                document.getElementById('galeriContainer').innerHTML = data.galeri.map(g => `<div class="slide-item galeri"><div class="card shadow-sm border-0 h-100"><img src="${fixGoogleDriveLink(g[2])}" class="card-img-top rounded-top" style="height: 180px; object-fit: cover;"><div class="card-body text-center p-2"><p class="card-text fw-semibold mb-1 small">${g[1]}</p><button class="btn btn-sm btn-outline-danger admin-panel mt-1" onclick="hapusFoto('${g[0]}')"><i class="fas fa-trash me-1"></i>Hapus</button></div></div></div>`).join('') || '<p class="text-muted text-center w-100 mt-2">Belum ada foto.</p>';
+                const galeriList = (data.galeri || []).filter(g => g && g[1] && String(g[1]).trim() !== "");
                 
-                if (data.galeri && data.galeri.length > 2) initSlider('galeriWrapper', 300);
+                document.getElementById('galeriContainer').innerHTML = galeriList.length > 0 ? galeriList.map(g => `<div class="slide-item galeri"><div class="card shadow-sm border-0 h-100"><img src="${fixGoogleDriveLink(g[2])}" class="card-img-top rounded-top" style="height: 180px; object-fit: cover;"><div class="card-body text-center p-2"><p class="card-text fw-semibold mb-1 small">${g[1]}</p><button class="btn btn-sm btn-outline-danger admin-panel mt-1" onclick="hapusFoto('${g[0]}')"><i class="fas fa-trash me-1"></i>Hapus</button></div></div></div>`).join('') : '<p class="text-muted text-center w-100 mt-2">Belum ada foto.</p>';
+                
+                if (galeriList.length > 2) initSlider('galeriWrapper', 300);
 
-            }).catch(err => console.error(err));
+            }).catch(err => console.error("Gagal memuat data:", err));
         }
 
         function showBeritaDetail(id) {
@@ -625,13 +757,18 @@
 
         function toggleAdminState(status) {
             document.body.classList.toggle('is-admin', status);
-            const loginGembok = document.getElementById('loginGembok'); const icon = loginGembok.querySelector('i');
+            const loginGembok = document.getElementById('loginGembok');
             if(status) {
-                icon.className = "fas fa-edit text-danger fs-5"; loginGembok.setAttribute('data-bs-target', '#cmsSettingsModal');
+                loginGembok.innerHTML = '<i class="fas fa-edit text-danger fs-5"></i>'; 
+                loginGembok.setAttribute('data-bs-target', '#cmsSettingsModal');
                 fetch(GAS_WEB_APP_URL, { method: 'POST', mode: 'cors', body: JSON.stringify({ action: "get_data" }) })
                 .then(res => res.json()).then(data => {
-                    const s = data.settings;
-                    document.getElementById('ksNamaIn').value = s.Nama_Kepala_Sekolah; document.getElementById('ksSambutanIn').value = s.Sambutan_Kepala_Sekolah;
+                    const s = data.settings || {};
+                    
+                    document.getElementById('ksNamaIn').value = s.Nama_Kepala_Sekolah || ""; 
+                    document.getElementById('ksVideoIn').value = s.URL_Video_KS || "";
+                    document.getElementById('ksSambutanIn').value = s.Sambutan_Kepala_Sekolah || "";
+                    
                     document.getElementById('urlSpmbIn').value = s.URL_SPMB || ""; document.getElementById('urlBukuTamuIn').value = s.URL_Buku_Tamu || "";
                     if(data.statistik) {
                         document.getElementById('adminStatContainer').innerHTML = data.statistik.map(st => `
@@ -646,9 +783,19 @@
                     }
                     ['Skl', 'Isi', 'Proses', 'Penilaian', 'Ptk', 'Sarpras', 'Pengelolaan', 'Pembiayaan'].forEach(k => document.getElementById('bos'+k+'In').value = s['Bos_'+(k === 'Ptk' ? 'PTK' : k === 'Skl' ? 'SKL' : k)]);
                     document.getElementById('bosSklIn').dispatchEvent(new Event('input'));
-                    document.getElementById('alamatIn').value = s.Alamat_Sekolah; document.getElementById('ytIn').value = s.URL_YouTube; document.getElementById('tiktokIn').value = s.URL_TikTok; document.getElementById('instaIn').value = s.URL_Instagram; document.getElementById('fbIn').value = s.URL_Facebook; document.getElementById('xIn').value = s.URL_X;
+                    
+                    document.getElementById('alamatIn').value = s.Alamat_Sekolah || ""; 
+                    document.getElementById('waIn').value = s.No_WhatsApp || ""; 
+                    document.getElementById('ytIn').value = s.URL_YouTube || ""; 
+                    document.getElementById('tiktokIn').value = s.URL_TikTok || ""; 
+                    document.getElementById('instaIn').value = s.URL_Instagram || ""; 
+                    document.getElementById('fbIn').value = s.URL_Facebook || ""; 
+                    document.getElementById('xIn').value = s.URL_X || "";
                 });
-            } else { icon.className = "fas fa-lock"; loginGembok.setAttribute('data-bs-target', '#loginModal'); }
+            } else { 
+                loginGembok.innerHTML = '@'; 
+                loginGembok.setAttribute('data-bs-target', '#loginModal'); 
+            }
         }
         function logout() { sessionStorage.removeItem('isAdmin'); toggleAdminState(false); window.location.reload(); }
 
@@ -657,7 +804,15 @@
             Promise.all(dataMap.map(cfg => fetch(GAS_WEB_APP_URL, { method: 'POST', mode: 'cors', body: JSON.stringify({ action: "update_config", key: cfg[0], value: cfg[1] }) })))
             .then(() => window.location.reload()).finally(() => { btn.innerHTML = "Simpan"; btn.disabled = false; });
         }
-        document.getElementById('formKSConfig').addEventListener('submit', function(e) { handleConfigSubmit(e, 'btnSubmitKSConfig', [['Nama_Kepala_Sekolah', document.getElementById('ksNamaIn').value], ['Sambutan_Kepala_Sekolah', document.getElementById('ksSambutanIn').value]]); });
+        
+        document.getElementById('formKSConfig').addEventListener('submit', function(e) { 
+            handleConfigSubmit(e, 'btnSubmitKSConfig', [
+                ['Nama_Kepala_Sekolah', document.getElementById('ksNamaIn').value], 
+                ['URL_Video_KS', document.getElementById('ksVideoIn').value],
+                ['Sambutan_Kepala_Sekolah', document.getElementById('ksSambutanIn').value]
+            ]); 
+        });
+
         document.getElementById('formUpdateStat').addEventListener('submit', function(e) {
             e.preventDefault(); const btn = document.getElementById('btnUpdateStat'); btn.innerHTML = "Menyimpan..."; btn.disabled = true;
             const inputs = document.querySelectorAll('.stat-val-input'); const updates = Array.from(inputs).map(inp => ({id: inp.getAttribute('data-id'), nilai: inp.value}));
@@ -669,7 +824,20 @@
         });
         function hapusStatistik(id) { if(confirm("Hapus kartu statistik ini permanen?")) { fetch(GAS_WEB_APP_URL, { method: 'POST', mode: 'cors', body: JSON.stringify({ action: "hapus_stat", id: id }) }).then(() => window.location.reload()); } }
         document.getElementById('formBosConfig').addEventListener('submit', function(e) { handleConfigSubmit(e, 'btnSubmitBosConfig', [['Bos_SKL', document.getElementById('bosSklIn').value || 0], ['Bos_Isi', document.getElementById('bosIsiIn').value || 0], ['Bos_Proses', document.getElementById('bosProsesIn').value || 0], ['Bos_Penilaian', document.getElementById('bosPenilaianIn').value || 0], ['Bos_PTK', document.getElementById('bosPtkIn').value || 0], ['Bos_Sarpras', document.getElementById('bosSarprasIn').value || 0], ['Bos_Pengelolaan', document.getElementById('bosPengelolaanIn').value || 0], ['Bos_Pembiayaan', document.getElementById('bosPembiayaanIn').value || 0]]); });
-        document.getElementById('formConfig').addEventListener('submit', function(e) { handleConfigSubmit(e, 'btnSubmitConfig', [['URL_SPMB', document.getElementById('urlSpmbIn').value], ['URL_Buku_Tamu', document.getElementById('urlBukuTamuIn').value], ['Alamat_Sekolah', document.getElementById('alamatIn').value], ['URL_YouTube', document.getElementById('ytIn').value], ['URL_TikTok', document.getElementById('tiktokIn').value], ['URL_Instagram', document.getElementById('instaIn').value], ['URL_Facebook', document.getElementById('fbIn').value], ['URL_X', document.getElementById('xIn').value]]); });
+        
+        document.getElementById('formConfig').addEventListener('submit', function(e) { 
+            handleConfigSubmit(e, 'btnSubmitConfig', [
+                ['URL_SPMB', document.getElementById('urlSpmbIn').value], 
+                ['URL_Buku_Tamu', document.getElementById('urlBukuTamuIn').value], 
+                ['Alamat_Sekolah', document.getElementById('alamatIn').value], 
+                ['No_WhatsApp', document.getElementById('waIn').value], 
+                ['URL_YouTube', document.getElementById('ytIn').value], 
+                ['URL_TikTok', document.getElementById('tiktokIn').value], 
+                ['URL_Instagram', document.getElementById('instaIn').value], 
+                ['URL_Facebook', document.getElementById('fbIn').value], 
+                ['URL_X', document.getElementById('xIn').value]
+            ]); 
+        });
 
         function compressImagePromise(file) {
             return new Promise((resolve) => {
@@ -679,15 +847,55 @@
             });
         }
         function processAndCompressImage(file, callback) { compressImagePromise(file).then(callback); }
-        function handleKsUploadDirect(input) { if(!input.files[0]) return; const loading = document.getElementById('ksLoadingDirect'); loading.classList.remove('d-none'); processAndCompressImage(input.files[0], (base64) => { fetch(GAS_WEB_APP_URL, { method: 'POST', mode: 'cors', body: JSON.stringify({ action: "upload_ks", fileData: base64 }) }).then(() => window.location.reload()); }); }
-        function handleBgUpload(input) { if(!input.files[0]) return; document.getElementById('bgLoading').classList.remove('d-none'); processAndCompressImage(input.files[0], (base64) => { fetch(GAS_WEB_APP_URL, { method: 'POST', mode: 'cors', body: JSON.stringify({ action: "update_bg", fileData: base64, nama: "Latar Belakang Hero (CMS)" }) }).then(() => window.location.reload()); }); }
-        function handleBosBgUpload(input) { if(!input.files[0]) return; document.getElementById('bosBgLoading').classList.remove('d-none'); processAndCompressImage(input.files[0], (base64) => { fetch(GAS_WEB_APP_URL, { method: 'POST', mode: 'cors', body: JSON.stringify({ action: "update_bos_bg", fileData: base64 }) }).then(() => window.location.reload()); }); }
+        
+        function handleBgUpload(input) { 
+            if(!input.files || input.files.length === 0) return; 
+            document.getElementById('bgLoading').classList.remove('d-none'); 
+            
+            let uploadPromises = [];
+            for (let i = 0; i < input.files.length; i++) {
+                uploadPromises.push(new Promise((resolve) => {
+                    processAndCompressImage(input.files[i], (base64) => { 
+                        fetch(GAS_WEB_APP_URL, { method: 'POST', mode: 'cors', body: JSON.stringify({ action: "update_bg", fileData: base64, nama: "Latar Belakang Hero (CMS)" }) })
+                        .then(res => res.json()).then(data => { if(data.status==="error") alert("Error Upload Hero: " + data.message); resolve(); }).catch(()=>resolve()); 
+                    });
+                }));
+            }
+            Promise.all(uploadPromises).then(() => window.location.reload());
+        }
+
+        function handleBosBgUpload(input) { 
+            if(!input.files[0]) return; 
+            document.getElementById('bosBgLoading').classList.remove('d-none'); 
+            processAndCompressImage(input.files[0], (base64) => { 
+                fetch(GAS_WEB_APP_URL, { method: 'POST', mode: 'cors', body: JSON.stringify({ action: "update_bos_bg", fileData: base64 }) })
+                .then(res => res.json()).then(data => {
+                    if(data.status==="error") { alert("Error Upload BOS: " + data.message); document.getElementById('bosBgLoading').classList.add('d-none'); }
+                    else { window.location.reload(); }
+                }); 
+            }); 
+        }
+
+        function handleLogoUpload(input) { 
+            if(!input.files[0]) return; 
+            document.getElementById('logoLoading').classList.remove('d-none'); 
+            processAndCompressImage(input.files[0], (base64) => { 
+                fetch(GAS_WEB_APP_URL, { method: 'POST', mode: 'cors', body: JSON.stringify({ action: "update_logo", fileData: base64 }) })
+                .then(res => res.json()).then(data => {
+                    if(data.status==="error") { alert("Error Upload Logo: " + data.message); document.getElementById('logoLoading').classList.add('d-none'); }
+                    else { window.location.reload(); }
+                }); 
+            }); 
+        }
         
         document.getElementById('formBerita').addEventListener('submit', function(e) {
             e.preventDefault(); const btn = document.getElementById('btnSubmitBerita'); const files = document.getElementById('beritaFoto').files;
             if(files.length === 0) return alert("Pilih minimal 1 foto dokumentasi!"); btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Mengunggah...'; btn.disabled = true;
             let filePromises = []; for(let i = 0; i < files.length; i++) filePromises.push(compressImagePromise(files[i]));
-            Promise.all(filePromises).then(base64Array => { fetch(GAS_WEB_APP_URL, { method: 'POST', mode: 'cors', body: JSON.stringify({ action: "tambah_berita", judul: document.getElementById('beritaJudul').value, konten: document.getElementById('beritaKonten').value, fileDataArray: base64Array }) }).then(() => window.location.reload()); });
+            Promise.all(filePromises).then(base64Array => { 
+                fetch(GAS_WEB_APP_URL, { method: 'POST', mode: 'cors', body: JSON.stringify({ action: "tambah_berita", judul: document.getElementById('beritaJudul').value, konten: document.getElementById('beritaKonten').value, fileDataArray: base64Array }) })
+                .then(res => res.json()).then(data => { if(data.status==="error") alert("Error: "+data.message); window.location.reload(); }); 
+            });
         });
         function hapusBerita(id) { if(confirm("Hapus berita ini permanen?")) fetch(GAS_WEB_APP_URL, { method: 'POST', mode: 'cors', body: JSON.stringify({ action: "hapus_berita", id: id }) }).then(() => window.location.reload()); }
 
@@ -752,7 +960,14 @@
 
         function hapusApp(id) { if(confirm("Yakin ingin menghapus aplikasi ini?")) { fetch(GAS_WEB_APP_URL, { method: 'POST', mode: 'cors', body: JSON.stringify({ action: "hapus_app", id: id }) }).then(() => window.location.reload()); } }
 
-        function saveFoto() { const judul = document.getElementById('fotoJudul').value, file = document.getElementById('fotoFile').files[0]; if(!file || !judul) return; processAndCompressImage(file, (base64) => { fetch(GAS_WEB_APP_URL, { method: 'POST', mode: 'cors', body: JSON.stringify({ action: "upload_galeri", nama: judul, fileData: base64 }) }).then(() => window.location.reload()); }); }
+        function saveFoto() { 
+            const judul = document.getElementById('fotoJudul').value, file = document.getElementById('fotoFile').files[0]; 
+            if(!file || !judul) return; 
+            processAndCompressImage(file, (base64) => { 
+                fetch(GAS_WEB_APP_URL, { method: 'POST', mode: 'cors', body: JSON.stringify({ action: "upload_galeri", nama: judul, fileData: base64 }) })
+                .then(res => res.json()).then(data => { if(data.status==="error") alert("Error: "+data.message); window.location.reload(); }); 
+            }); 
+        }
         function hapusFoto(id) { if(confirm("Hapus foto ini?")) fetch(GAS_WEB_APP_URL, { method: 'POST', mode: 'cors', body: JSON.stringify({ action: "hapus_galeri", id: id }) }).then(() => window.location.reload()); }
 
         document.querySelectorAll('.bottom-nav a').forEach(link => { link.addEventListener('click', function() { if(!this.classList.contains('login-btn') && !this.classList.contains('admin-panel') && !this.hasAttribute('target')) { document.querySelectorAll('.bottom-nav a').forEach(nav => nav.classList.remove('active')); this.classList.add('active'); } }); });
